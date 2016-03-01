@@ -9,7 +9,7 @@ class EntriesController < ApplicationController
       redirect_to root_url
     else
       @feed_items = []
-      render 'static_pages/home'
+      render 'pages/home'
     end
   end
 
@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-      params.require(:entry).permit(:title,:body)
+      params.require(:entry).permit(:title,:body,:picture)
   end
 
   def correct_user
